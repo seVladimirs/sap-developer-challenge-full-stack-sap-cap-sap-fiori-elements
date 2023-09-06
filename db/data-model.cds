@@ -1,12 +1,27 @@
-using { cuid, managed } from '@sap/cds/common'; 
+namespace fullstack_dev_challenge;
 
-namespace fullstack_dev_challenge; 
+using
+{
+    cuid,
+    managed
+}
+from '@sap/cds/common';
 
-entity Tests { 
-} 
+entity Tests : managed
+{
+    title : String;
+    description : String;
+    questions : Association to many Questions;
+}
 
-entity Questions { 
-} 
+entity Questions : cuid
+{
+    text : String;
+    test : Association to one Tests;
+    answer : Composition of one Answers;
+}
 
-aspect Answers { 
-} 
+aspect Answers : cuid
+{
+    test : String;
+}

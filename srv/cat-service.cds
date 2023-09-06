@@ -5,4 +5,6 @@ service DevChallengeService @(path: '/dev-challenge') {
     entity Tests as projection on fullstack_dev_challenge.Tests;  
 
     // TODO: Expose other entities here  
+    //  @odata.draft.enabled: true 
+    entity Questions as projection on fullstack_dev_challenge.Questions;  
 } 
