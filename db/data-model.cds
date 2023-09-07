@@ -23,5 +23,5 @@ entity Questions : cuid
 
 aspect Answers : cuid
 {
-    test : String;
+    text : String;
 }
