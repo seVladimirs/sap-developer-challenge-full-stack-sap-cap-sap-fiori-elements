@@ -11,13 +11,13 @@ entity Tests : managed
 {
     title : String;
     description : String;
-    questions : Association to many Questions;
+    questions : Association to many Questions on questions.test = $self;
 }
 
 entity Questions : cuid
 {
     text : String;
-    test : Association to one Tests;
+    test : Association to Tests; //> the backlink
     answer : Composition of one Answers;
 }
 
